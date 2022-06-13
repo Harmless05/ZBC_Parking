@@ -4,25 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Majestic Admin</title>
-  <!-- plugins:css -->
+  <title>Admin Dashboard - ZBC Parking</title>
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/base/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <link rel="shortcut icon" href="assets/img/ZBC-favicon.png" />
 </head>
 <body>
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="admin-dashboard.html"><img src="assets/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="admin-dashboard.html"><img src="assets/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="admin-dashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="admin-dashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -168,13 +162,19 @@
           <li class="nav-item">
             <a class="nav-link" href="admin-dashboard.html">
               <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">None</span>
+              <span class="menu-title">Users</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin-dashboard.html">
+              <i class="mdi mdi-chart-pie menu-icon"></i>
+              <span class="menu-title">Database</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="admin-dashboard.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Nano</span>
+              <span class="menu-title">Payments</span>
             </a>
           </li>
         </ul>
@@ -189,11 +189,6 @@
                   <div class="me-md-3 me-xl-5">
                     <h2>Welcome back,</h2>
                     <p class="mb-md-0">ZBC Parking Lot Admin Dashboard</p>
-                  </div>
-                  <div class="d-flex">
-                    <i class="mdi mdi-home text-muted hover-cursor"></i>
-                    <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
-                    <p class="text-primary mb-0 hover-cursor">Analytics</p>
                   </div>
                 </div>
                 <div class="d-flex justify-content-between align-items-end flex-wrap">
@@ -249,28 +244,28 @@
                           <i class="mdi mdi-currency-usd me-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Revenue</small>
-                            <h5 class="me-2 mb-0">$577545</h5>
+                            <h5 class="me-2 mb-0">$0</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Total views</small>
-                            <h5 class="me-2 mb-0">9833550</h5>
+                            <h5 class="me-2 mb-0">0</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Downloads</small>
-                            <h5 class="me-2 mb-0">2233783</h5>
+                            <small class="mb-1 text-muted">None</small>
+                            <h5 class="me-2 mb-0">0</h5>
                           </div>
                         </div>
                         <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-flag me-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Flagged</small>
-                            <h5 class="me-2 mb-0">3497843</h5>
+                            <small class="mb-1 text-muted">None</small>
+                            <h5 class="me-2 mb-0">0</h5>
                           </div>
                         </div>
                       </div>
@@ -380,35 +375,47 @@
             <div class="col-md-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Recent Purchases</p>
+                  <p class="card-title">Recent Activity</p>
                   <div class="table-responsive">
                     <table id="recent-purchases-listing" class="table">
                       <thead>
                         <tr>
                             <th>Name</th>
                             <th>Status report</th>
-                            <th>Office</th>
-                            <th>Price</th>
+                            <th>Parking Lot Name</th>
+                            <th>Parking Space Nr</th>
+                            <th>Phone Number</th>
                             <th>Date</th>
-                            <th>Gross amount</th>
+                            <th>Price</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                            <td>Minnie Farmer</td>
-                            <td>support</td>
-                            <td>Agustinaborough</td>
-                            <td>$30</td>
-                            <td>30 Apr 2018</td>
-                            <td>$44617</td>
+                            <td>John Doe</td>
+                            <td>Purcache</td>
+                            <td>ZBC Parking lot 1</td>
+                            <td>12</td>
+                            <td>+45 12345678</td>
+                            <td>01 July 2022</td>
+                            <td>140 DKK</td>
                         </tr>
                         <tr>
                             <td>Ernest Wade</td>
-                            <td>Levelled up</td>
-                            <td>West Fidelmouth</td>
-                            <td>$484</td>
-                            <td>08 Sep 2018</td>
-                            <td>$50862</td>
+                            <td>Refund</td>
+                            <td>ZBC Parking lot 2</td>
+                            <td>7</td>
+                            <td>+45 12345678</td>
+                            <td>08 June 2022</td>
+                            <td>70 DKK</td>
+                        </tr>
+                        <tr>
+                            <td>Marcus Lake</td>
+                            <td>Cancled</td>
+                            <td>ZBC Parking lot 3</td>
+                            <td>21</td>
+                            <td>+45 12345678</td>
+                            <td>03 June 2022</td>
+                            <td>0 DKK</td>
                         </tr>
                       </tbody>
                     </table>
