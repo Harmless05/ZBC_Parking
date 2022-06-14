@@ -15,8 +15,8 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="admin-dashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="admin-dashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="userdashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="userdashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -36,9 +36,6 @@
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown me-1">
-            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
-              <i class="mdi mdi-message-text mx-0"></i>
               <span class="count"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
@@ -81,9 +78,6 @@
               </a>
             </div>
           </li>
-          <li class="nav-item dropdown me-4">
-            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-              <i class="mdi mdi-bell mx-0"></i>
               <span class="count"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
@@ -154,27 +148,27 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
+            <a class="nav-link" href="userdashboard.html">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Users</span>
+            <a class="nav-link" href="userdashboard.html">
+              <i class="mdi mdi-account-circle menu-icon"></i>
+              <span class="menu-title">Profile</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Database</span>
+            <a class="nav-link" href="userdashboard.html">
+              <i class="mdi mdi-credit-card menu-icon"></i>
+              <span class="menu-title">Payment</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Payments</span>
+            <a class="nav-link" href="userdashboard.html">
+              <i class="mdi mdi-clock menu-icon"></i>
+              <span class="menu-title">Payment History</span>
             </a>
           </li>
         </ul>
@@ -188,20 +182,8 @@
                 <div class="d-flex align-items-end flex-wrap">
                   <div class="me-md-3 me-xl-5">
                     <h2>Welcome back, user name here</h2>
-                    <p class="mb-md-0">ZBC Parking Lot Admin Dashboard</p>
+                    <p class="mb-md-0"></p>
                   </div>
-                </div>
-                <div class="d-flex justify-content-between align-items-end flex-wrap">
-                  <button type="button" class="btn btn-light bg-white btn-icon me-3 d-none d-md-block ">
-                    <i class="mdi mdi-download text-muted"></i>
-                  </button>
-                  <button type="button" class="btn btn-light bg-white btn-icon me-3 mt-2 mt-xl-0">
-                    <i class="mdi mdi-clock-outline text-muted"></i>
-                  </button>
-                  <button type="button" class="btn btn-light bg-white btn-icon me-3 mt-2 mt-xl-0">
-                    <i class="mdi mdi-plus text-muted"></i>
-                  </button>
-                  <button class="btn btn-primary mt-2 mt-xl-0">Generate report</button>
                 </div>
               </div>
             </div>
@@ -215,7 +197,7 @@
                       <a class="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="sales-tab" data-bs-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Sales</a>
+                      <a class="nav-link" id="sales-tab" data-bs-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Purchase History</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" id="purchases-tab" data-bs-toggle="tab" href="#purchases" role="tab" aria-controls="purchases" aria-selected="false">Purchases</a>
@@ -243,19 +225,19 @@
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-currency-usd me-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Revenue</small>
+                            <small class="mb-1 text-muted">Paid in Total</small>
                             <h5 class="me-2 mb-0">$0</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
+                          <i class="mdi mdi-car icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Total views</small>
+                            <small class="mb-1 text-muted">Times Parked</small>
                             <h5 class="me-2 mb-0">0</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
+
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">None</small>
                             <h5 class="me-2 mb-0">0</h5>
@@ -289,7 +271,7 @@
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
+
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Downloads</small>
                             <h5 class="me-2 mb-0">2233783</h5>
@@ -351,7 +333,7 @@
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
+
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">Downloads</small>
                             <h5 class="me-2 mb-0">2233783</h5>
