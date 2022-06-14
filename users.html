@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Users AD - ZBC Parking</title>
+  <title>Users Panel - ZBC Parking</title>
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/base/vendor.bundle.base.css">
   <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -12,144 +12,17 @@
   <link rel="shortcut icon" href="assets/img/ZBC-favicon.png" />
 </head>
 <body>
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center">
-        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="admin-dashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="admin-dashboard.html"><img src="assets/img/ZBC_BLACK.png" alt="logo"/></a>
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-sort-variant"></span>
-          </button>
-        </div>  
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <ul class="navbar-nav mr-lg-4 w-100">
-          <li class="nav-item nav-search d-none d-lg-block w-100">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="search">
-                  <i class="mdi mdi-magnify"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown me-1">
-            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
-              <i class="mdi mdi-message-text mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                    <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">David Grey
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    The meeting is cancelled
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">Tim Cook
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    New product launch
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal"> Johnson
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    Upcoming board meeting
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item dropdown me-4">
-            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-              <i class="mdi mdi-bell mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-success">
-                    <i class="mdi mdi-information mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-warning">
-                    <i class="mdi mdi-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-info">
-                    <i class="mdi mdi-account-box mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <span class="nav-profile-name">John Doe</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="mdi mdi-settings text-primary"></i>
-                Settings
-              </a>
-              <a class="dropdown-item">
-                <i class="mdi mdi-logout text-primary"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
-        </button>
-      </div>
-    </nav>
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+  <div class="container"><img src="assets/img/ZBC_BLACK.png" width="70"><a class="navbar-brand logo" href="#">PARKING LOT</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="Login.html">Home</a></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container-fluid page-body-wrapper">
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
@@ -160,21 +33,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
+            <a class="nav-link" href="users.html">
               <i class="mdi mdi-account-multiple menu-icon"></i>
               <span class="menu-title">Users</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
-              <i class="mdi mdi mdi-server menu-icon"></i>
-              <span class="menu-title">Database</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin-dashboard.html">
-              <i class="mdi mdi mdi-cash menu-icon"></i>
-              <span class="menu-title">Payments</span>
+            <a class="nav-link" href="parking-lot.html">
+              <i class="mdi mdi mdi-parking menu-icon"></i>
+              <span class="menu-title">Parking Lot</span>
             </a>
           </li>
         </ul>
@@ -187,8 +54,8 @@
               <div class="d-flex justify-content-between flex-wrap">
                 <div class="d-flex align-items-end flex-wrap">
                   <div class="me-md-3 me-xl-5">
-                    <h2>Welcome back,</h2>
-                    <p class="mb-md-0">ZBC Parking Lot Admin Dashboard</p>
+                    <h2>User Database</h2>
+                    <p class="mb-md-0">Currently holding %USERS% users</p>
                   </div>
                 </div>
                 <div class="d-flex justify-content-between align-items-end flex-wrap">
@@ -210,47 +77,39 @@
             <div class="col-md-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Recent Activity</p>
+                  <p class="card-title">Users</p>
                   <div class="table-responsive">
                     <table id="recent-purchases-listing" class="table">
                       <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Status report</th>
-                            <th>Parking Lot Name</th>
-                            <th>Parking Space Nr</th>
+                            <th>License Plate</th>
                             <th>Phone Number</th>
-                            <th>Date</th>
-                            <th>Price</th>
+                            <th>Account Created</th>
+                            <th>Time</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                             <td>John Doe</td>
-                            <td>Purcache</td>
-                            <td>ZBC Parking lot 1</td>
-                            <td>12</td>
+                            <td>AB123456</td>
                             <td>+45 12345678</td>
                             <td>01 July 2022</td>
-                            <td>140 DKK</td>
+                            <td>02:23:54</td>
                         </tr>
                         <tr>
                             <td>Ernest Wade</td>
-                            <td>Refund</td>
-                            <td>ZBC Parking lot 2</td>
-                            <td>7</td>
+                            <td>AB123456</td>
                             <td>+45 12345678</td>
                             <td>08 June 2022</td>
-                            <td>70 DKK</td>
+                            <td>02:23:54</td>
                         </tr>
                         <tr>
                             <td>Marcus Lake</td>
-                            <td>Cancled</td>
-                            <td>ZBC Parking lot 3</td>
-                            <td>21</td>
+                            <td>AB123456</td>
                             <td>+45 12345678</td>
                             <td>03 June 2022</td>
-                            <td>0 DKK</td>
+                            <td>02:23:54</td>
                         </tr>
                       </tbody>
                     </table>
