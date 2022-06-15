@@ -31,7 +31,7 @@ if (el) {
 }
 function saveMemberInfo(event) {
   event.preventDefault();
-  const keys = ['reg_no', 'owner_name', 'email', 'd_o_a', 'slot']
+  const keys = ['reg_no', 'owner_name', 'phone', 'd_o_a', 'slot']
   const obj = {}
   keys.forEach((item, index) => {
     const result = document.getElementById(item).value
@@ -93,12 +93,12 @@ function getTableData() {
   const filteredMembers = members.filter(({
       reg_no,
       owner_name,
-      email,
+      phone,
       d_o_a,
       slot
     }, index) => reg_no.toLowerCase().includes(searchKeyword.toLowerCase()) ||
     owner_name.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-    email.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+    phone.toLowerCase().includes(searchKeyword.toLowerCase()) ||
     d_o_a.toLowerCase().includes(searchKeyword.toLowerCase()) ||
     slot.toLowerCase().includes(searchKeyword.toLowerCase()))
   if (!filteredMembers.length) {
@@ -122,14 +122,14 @@ function insertIntoTableView(item, tableIndex) {
   const idCell = row.insertCell(0)
   const firstNameCell = row.insertCell(1)
   const lastNameCell = row.insertCell(2)
-  const emailCell = row.insertCell(3)
+  const phoneCell = row.insertCell(3)
   const dateOfBirthCell = row.insertCell(4)
   const slotCell = row.insertCell(5)
   const actionCell = row.insertCell(6)
   idCell.innerHTML = tableIndex
   firstNameCell.innerHTML = item.reg_no
   lastNameCell.innerHTML = item.owner_name
-  emailCell.innerHTML = item.email
+  phoneCell.innerHTML = item.phone
   dateOfBirthCell.innerHTML = item.d_o_a
   slotCell.innerHTML = `<span class="tag">${item.slot}</span>`
   const guid = item.id
@@ -152,7 +152,7 @@ function showMemberData(id) {
   const member = allMembers.find(item => item.id == id)
   $('#show_reg_no').val(member.reg_no)
   $('#show_owner_name').val(member.owner_name)
-  $('#show_email').val(member.email)
+  $('#show_phone').val(member.phone)
   $('#show_d_o_a').val(member.d_o_a)
   $('#show_slot').val(member.slot)
   $('#showModal').modal()
@@ -167,7 +167,7 @@ function showEditModal(id) {
   const member = allMembers.find(item => item.id == id)
   $('#edit_reg_no').val(member.reg_no)
   $('#edit_owner_name').val(member.owner_name)
-  $('#edit_email').val(member.email)
+  $('#edit_phone').val(member.phone)
   $('#edit_d_o_a').val(member.d_o_a)
   $('#edit_slot').val(member.slot)
   $('#member_id').val(id)
@@ -177,7 +177,7 @@ function showEditModal(id) {
  * Store Updated Member Data into the storage
  */
 function updateMemberData() {
-  if ($('#edit_reg_no').val() == '' || $('#edit_owner_name').val() == '' || $('#edit_email').val() == '' || $('#edit_d_o_a').val() == '' || $('#edit_slot').val() == '') {
+  if ($('#edit_reg_no').val() == '' || $('#edit_owner_name').val() == '' || $('#edit_phone').val() == '' || $('#edit_d_o_a').val() == '' || $('#edit_slot').val() == '') {
     alert("All fields are required");
     window.location.reload();
     this.preventDefault();
@@ -201,7 +201,7 @@ function updateMemberData() {
   }) => id == memberId)
   member.reg_no = $('#edit_reg_no').val()
   member.owner_name = $('#edit_owner_name').val()
-  member.email = $('#edit_email').val()
+  member.phone = $('#edit_phone').val()
   member.d_o_a = $('#edit_d_o_a').val()
   member.slot = $('#edit_slot').val()
   const data = JSON.stringify(allMembers)
@@ -235,7 +235,7 @@ function deleteMemberData() {
   getTableData()
 }
 /**
- * Sorting table data through type, e.g: reg_no, email, owner_name etc.
+ * Sorting table data through type, e.g: reg_no, phone, owner_name etc.
  *
  * @param {string} type
  */

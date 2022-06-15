@@ -28,8 +28,8 @@ label {
 .starter-template {
   margin: 32px auto;
   padding: 32px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 16px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
