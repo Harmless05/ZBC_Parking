@@ -32,21 +32,33 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="admin-dashboard.html">
+                <a class="nav-link" href="userdashboard.html">
                     <i class="mdi mdi-home menu-icon"></i>
                     <span class="menu-title">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="users.html">
-                    <i class="mdi mdi-account-multiple menu-icon"></i>
-                    <span class="menu-title">Users</span>
+                <a class="nav-link" href="user-parking-lot.html">
+                    <i class="mdi mdi-parking menu-icon"></i>
+                    <span class="menu-title">Parking Lot</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="parking-lot.html">
-                    <i class="mdi mdi-parking menu-icon"></i>
-                    <span class="menu-title">Parking Lot</span>
+                <a class="nav-link" href="user-profile.html">
+                    <i class="mdi mdi-account-circle menu-icon"></i>
+                    <span class="menu-title">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="user-payment.html">
+                    <i class="mdi mdi-credit-card menu-icon"></i>
+                    <span class="menu-title">Payment</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="parking-history.html">
+                    <i class="mdi mdi-clock menu-icon"></i>
+                    <span class="menu-title">Parking History</span>
                 </a>
             </li>
         </ul>
@@ -119,7 +131,7 @@
                 <div class="starter-template">
                     <div class="info-table-header-block">
                         <button type="button slot" class="btn btn-primary text-white slot-button" data-toggle="modal" data-target="#addnewModal">
-                             <h4>Reserve a parking space</h4>
+                            Add new vehicle
                         </button>
                     </div>
                     <div class="modal fade" id="addnewModal" tabindex="-1" role="dialog" aria-labelledby="addnewModalTitle" aria-hidden="true">
@@ -137,6 +149,18 @@
                                             <input type="text" class="form-control" placeholder="Enter registration no:" id="reg_no" required />
                                         </div>
                                         <div class="form-group">
+                                            <label for="owner_name">Username
+                                                <span class="required-field">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" placeholder="Enter username:" id="owner_name" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number
+                                                <span class="required-field">*</span>
+                                            </label>
+                                            <input type="phone" class="form-control" placeholder="Enter phone number" id="phone" required />
+                                        </div>
+                                        <div class="form-group">
                                             <label for="d_o_a">Date of allocation
                                                 <span class="required-field">*</span>
                                             </label>
@@ -146,11 +170,11 @@
                                             <label for="slot">Slot number
                                                 <span class="required-field">*</span>
                                             </label>
-                                            <input type="number" class="form-control" placeholder="Enter slot number" id="slot" required min="1" max="6" maxlength="1">
+                                            <input type="number" class="form-control" placeholder="Enter slot number" id="slot" required min="1" max="10" maxlength="2">
                                         </div>
                                         <div class="modal-footer-extended">
-                                            <button type="submit" style="color:white" class="btn btn-primary">Reserve</button>
-                                            <button type="button" style="color:whitesmoke"class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="submit" class="btn btn-primary">Create</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                         </div>
                                     </form>
                                 </div>
@@ -182,7 +206,7 @@
                     </table>
                     <div class="show-table-info hide">
                         <div class="alert alert-info center">
-                            <strong>No cars reserved</strong>
+                            <strong>Parking lot is empty</strong>
                         </div>
                     </div>
                 </div>
@@ -200,7 +224,15 @@
                                     <input type="text" class="form-control" id="show_reg_no" value="" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label for="show_d_o_a">Date of reservation</label>
+                                    <label for="show_owner_name">Username</label>
+                                    <input type="text" class="form-control" id="show_owner_name" value="" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_phone">Phone Number</label>
+                                    <input type="phone" class="form-control" id="show_phone" value="" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show_d_o_a">Date of allocation</label>
                                     <input type="text" class="form-control" id="show_d_o_a" value="" disabled>
                                 </div>
                                 <div class="form-group">
@@ -225,7 +257,25 @@
                             <div class="modal-body">
                                 <form>
                                     <div class="form-group">
-                                        <label for="edit_d_o_a">Date of reservation
+                                        <label for="edit_reg_no">Licence Plate
+                                            <span class="required-field">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="edit_reg_no" value="" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edit_owner_name">Username
+                                            <span class="required-field">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="edit_owner_name" value="" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edit_phone">Phone Number
+                                            <span class="required-field">*</span>
+                                        </label>
+                                        <input type="phone" class="form-control" id="edit_phone" value="" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edit_d_o_a">Date of allocation
                                             <span class="required-field">*</span>
                                         </label>
                                         <input type="text" class="form-control" id="edit_d_o_a" value="" required onkeypress="return false;" />
