@@ -1,6 +1,4 @@
-/**
- * Initiate the app at the beginning
- */
+
 (function mounted() {
   getTableData()
   $('#d_o_a').datepicker({
@@ -16,15 +14,11 @@
     dateFormat: 'dd-mm-yy'
   })
 })()
-/**
- * Generating unique ID for new Input
- */
+
 function guid() {
   return parseInt(Date.now() + Math.random())
 }
-/**
- * Create and Store New Member
- */
+
 var el = document.querySelector('#saveMemberInfo');
 if (el) {
     el.addEventListener('submit', saveMemberInfo);
@@ -64,15 +58,11 @@ function saveMemberInfo(event) {
     $('#addnewModal').modal('hide')
   }
 }
-/**
- * Clear Create New Member Form Data0
- */
+
 function clearFields() {
   $('#input_form')[0].reset()
 }
-/**
- * Get All Members already stored into the local storage
- */
+
 function getMembers() {
   const memberRecord = localStorage.getItem('members')
   let members = []
@@ -83,9 +73,7 @@ function getMembers() {
     return members
   }
 }
-/**
- * Populating Table with stored data
- */
+
 function getTableData() {
   $('#member_table').find('tr:not(:first)').remove()
   const searchKeyword = $('#member_search').val()
@@ -110,12 +98,7 @@ function getTableData() {
     insertIntoTableView(item, index + 1)
   })
 }
-/**
- * Inserting data into the table of the view
- *
- * @param {object} item
- * @param {int} tableIndex
- */
+
 function insertIntoTableView(item, tableIndex) {
   const table = document.getElementById('member_table')
   const row = table.insertRow()
@@ -135,18 +118,12 @@ function insertIntoTableView(item, tableIndex) {
   const guid = item.id
   actionCell.innerHTML = `<button class="btn btn-sm btn-secondary" onclick="showMemberData(${guid})">View</button> <button class="btn btn-sm btn-primary" onclick="showEditModal(${guid})">Edit</button> <button class="btn btn-sm btn-danger" onclick="showDeleteModal(${guid})">Delete</button>`
 }
-/**
- * Get Total Row of Table
- */
+
 function getTotalRowOfTable() {
   const table = document.getElementById('member_table')
   return table.rows.length
 }
-/**
- * Show Single Member Data into the modal
- *
- * @param {string} id
- */
+
 function showMemberData(id) {
   const allMembers = getMembers()
   const member = allMembers.find(item => item.id == id)
@@ -157,11 +134,7 @@ function showMemberData(id) {
   $('#show_slot').val(member.slot)
   $('#showModal').modal()
 }
-/**
- * Show Edit Modal of a single member
- *
- * @param {string} id
- */
+
 function showEditModal(id) {
   const allMembers = getMembers()
   const member = allMembers.find(item => item.id == id)
@@ -173,9 +146,7 @@ function showEditModal(id) {
   $('#member_id').val(id)
   $('#editModal').modal()
 }
-/**
- * Store Updated Member Data into the storage
- */
+
 function updateMemberData() {
   if ($('#edit_reg_no').val() == '' || $('#edit_owner_name').val() == '' || $('#edit_phone').val() == '' || $('#edit_d_o_a').val() == '' || $('#edit_slot').val() == '') {
     alert("All fields are required");
@@ -210,18 +181,12 @@ function updateMemberData() {
   getTableData()
   $('#editModal').modal('hide')
 }
-/**
- * Show Delete Confirmation Dialog Modal
- *
- * @param {int} id
- */
+
 function showDeleteModal(id) {
   $('#deleted-member-id').val(id)
   $('#deleteDialog').modal()
 }
-/**
- * Delete single member
- */
+
 function deleteMemberData() {
   const id = $('#deleted-member-id').val()
   const allMembers = getMembers()
@@ -234,11 +199,7 @@ function deleteMemberData() {
   $('#deleteDialog').modal('hide')
   getTableData()
 }
-/**
- * Sorting table data through type, e.g: reg_no, phone, owner_name etc.
- *
- * @param {string} type
- */
+
 function sortBy(type) {
   $("#member_table").find("tr:not(:first)").remove();
   var totalClickOfType = parseInt(localStorage.getItem(type));
